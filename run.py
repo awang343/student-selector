@@ -1,7 +1,7 @@
 import requests
 from class_class import Class
 
-lecture3 = Class("lecture_list.csv")
+lecture3 = Class("class_list.csv")
 token = "7471389599:AAHs5JDdVqWIYgMQkLqNkUTwgGQO2IuCOnc"
 
 url = f'https://api.telegram.org/bot{token}/sendMessage'
