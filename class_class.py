@@ -1,3 +1,7 @@
+import numpy as np
+import pandas as pd
+import scipy as sp
+
 class Class:
     def __init__(self, csv_name):
         self.load_class(csv_name)
