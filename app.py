@@ -1,7 +1,5 @@
-# app.py
-
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from class_data import Class
+from class_class import Class
 import threading
 from telegram_bot import start_telegram_bot, send_message
 import time

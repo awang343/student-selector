@@ -1,11 +1,10 @@
-import numpy as np 
-import pandas as pd 
+import numpy as np
+import pandas as pd
 import scipy as sp
 
 class Class:
     def __init__(self, csv_name):
         self.load_class(csv_name)
-        print(self.data)
     
     def load_class(self, csv_name):
         self.data = pd.read_csv(csv_name, index_col="Id")
@@ -17,9 +16,9 @@ class Class:
     
     def choose_random(self):
         id = np.random.choice(self.data.index, p = self.data["Weights"])
+        display(self.data.loc[id])
         self.data.loc[id, "Talk Count"] += 1
         self.update_weights()
-        return self.data.loc[id, "Name"]
 
     def volunteer(self, *, id=None, name=None):
         if id is None and name is None:
