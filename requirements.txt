@@ -1,0 +1,7 @@
+flask
+pandas
+numpy
+scipy
+pyTelegramBotAPI
+python-dotenv
+pygame

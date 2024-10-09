@@ -1,2 +1,5 @@
 class_list.csv
 lecture_list.csv
+.env
+__pycache__
+.venv
