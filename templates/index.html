@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Selector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Student Selector</h1>
+    <div id="controls">
+        <form action="/add_student" method="post" class="control-form">
+            <input type="text" name="name" placeholder="Student Name" required class="input-field">
+            <button type="submit" class="button">Add Student</button>
+        </form>
+        <form action="/remove_student" method="post" class="control-form">
+            <select name="name" required class="dropdown">
+                <option value="" disabled selected>Select a student to remove</option>
+                {% for student in students %}
+                <option value="{{ student['Name'] }}">{{ student['Name'] }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="button">Remove Student</button>
+        </form>
+        <form action="/volunteer" method="post" class="control-form">
+            <select name="name" required class="dropdown">
+                <option value="" disabled selected>Select a student to volunteer</option>
+                {% for student in students %}
+                <option value="{{ student['Name'] }}">{{ student['Name'] }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="button">Volunteer</button>
+        </form>
+        <button id="select-student-btn" class="button">Select Student</button>
+    </div>
+    <div id="student-list">
+        {% for student in students %}
+        <div class="student-card" data-name="{{ student['Name'] }}">
+            <p>{{ student['Name'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="selected-student-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            <p id="selected-student-name"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
